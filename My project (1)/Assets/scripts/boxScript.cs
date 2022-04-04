@@ -13,6 +13,11 @@ public class boxScript : MonoBehaviour
     {
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
+    
+    void OnCollisionEnter(Collision collision)
+    {
+        print(collision.gameObject.tag);
+    }
 
     // Update is called once per frame
     void Update()
