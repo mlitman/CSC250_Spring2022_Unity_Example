@@ -16,6 +16,7 @@ public class boxScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
+            CORE.display();
             count++;
             if(count == 3)
             {

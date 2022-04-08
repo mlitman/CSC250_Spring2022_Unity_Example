@@ -16,13 +16,16 @@ public class playerScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    public void DoSomething()
+    public void display()
     {
-        print("Player: Do something called");
+        print("Player Script Display");
     }
 
     void OnCollisionEnter(Collision collision)
     {
+        SendMessage("display");
+        CORE.display();
+
         if(collision.gameObject.tag.Equals("enemy"))
         {
             count++;
