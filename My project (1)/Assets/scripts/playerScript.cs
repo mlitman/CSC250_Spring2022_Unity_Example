@@ -16,16 +16,8 @@ public class playerScript : MonoBehaviour
         rb = this.gameObject.GetComponent<Rigidbody>();
     }
 
-    public void display()
-    {
-        print("Player Script Display");
-    }
-
     void OnCollisionEnter(Collision collision)
     {
-        SendMessage("display");
-        CORE.display();
-
         if(collision.gameObject.tag.Equals("enemy"))
         {
             count++;
@@ -61,6 +53,10 @@ public class playerScript : MonoBehaviour
         else if (Input.GetKeyDown("space"))
         {
             rb.velocity = Vector3.up * speed;
+        }
+        else if(Input.GetKeyDown("f"))
+        {
+            print("fire");
         }
     }
 }

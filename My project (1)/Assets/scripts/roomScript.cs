@@ -10,6 +10,11 @@ public class roomScript : MonoBehaviour
         CORE.addRoomGO(this.gameObject);
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        print("Room Entered: " + this.gameObject.ToString());
+    }
+
     // Update is called once per frame
     void Update()
     {

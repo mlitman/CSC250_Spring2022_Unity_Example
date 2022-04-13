@@ -26,11 +26,9 @@ public class boxScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("Player"))
         {
-            CORE.display();
             count++;
             if(count == 3)
             {
-                this.gameObject.SendMessage("DoSomething");
                 Destroy(this.gameObject);
             }
         }

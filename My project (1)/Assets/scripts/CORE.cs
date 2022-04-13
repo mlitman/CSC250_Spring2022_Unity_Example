@@ -7,22 +7,28 @@ public class CORE : MonoBehaviour
     public Transform enemyPrefab;
     public Transform spawnPoint;
 
-    private static List<GameObject> theRooms = new List<GameObject>();
+    private static List<GameObject> theRoomsGos = new List<GameObject>();
+    private static List<Room> theRooms = new List<Room>();
+
+    public static void addRoom(Room theRoom)
+    {
+        CORE.theRooms.Add(theRoom);
+    }
 
     public static void addRoomGO(GameObject go)
     {
-        CORE.theRooms.Add(go);
-        print("Added Room");
+        CORE.theRoomsGos.Add(go);
+        //print("Added Room");
     }
 
     public static void display()
     {
-        print("Woot");
-    }
 
+    }
     // Start is called before the first frame update
     void Start()
     {
+        /*
         for (int i = 0; i < 100; i++)
         {
       
@@ -30,6 +36,7 @@ public class CORE : MonoBehaviour
             Rigidbody rb = t.GetComponent<Rigidbody>();
             rb.velocity = new Vector3(Random.Range(10, 30), Random.Range(0, 20), Random.Range(10, 30));
         }
+        */
     }
 
     // Update is called once per frame
