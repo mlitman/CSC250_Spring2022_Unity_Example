@@ -9,6 +9,17 @@ public class CORE : MonoBehaviour
 
     private static List<GameObject> theRoomsGos = new List<GameObject>();
     private static List<Room> theRooms = new List<Room>();
+    private static Player currentPlayer = null;
+
+    public static void setPlayer(Player p)
+    {
+        CORE.currentPlayer = p;
+    }
+
+    public static Player getPlayer()
+    {
+        return CORE.currentPlayer;
+    }
 
     public static void addRoom(Room theRoom)
     {

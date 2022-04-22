@@ -4,17 +4,22 @@ using UnityEngine;
 
 public class roomTriggerScript : MonoBehaviour
 {
+    private Room thisRoom;
+   
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.thisRoom = new Room();
+        CORE.addRoom(this.thisRoom);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag.Equals("Player"))
         {
-            print("Player Entered room " + this.gameObject.ToString());
+            this.thisRoom.setPlayer(CORE.getPlayer()); //lets the new room know about the player
+            print("Player now in room: " + this.thisRoom);
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {

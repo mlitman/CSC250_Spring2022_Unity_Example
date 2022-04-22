@@ -20,7 +20,11 @@ public class Player
         this.currentRoom = r;
     }
 
-    ..... START HERE make getRoom then make map work for players moving between rooms.
+    public Room getRoom()
+    {
+        return this.currentRoom;
+    }
+
     public void addKill()
     {
         this.killCount++;

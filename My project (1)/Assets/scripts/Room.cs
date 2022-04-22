@@ -14,6 +14,7 @@ public class Room
     public void setPlayer(Player p)
     {
         this.thePlayer = p;
+        this.thePlayer.setRoom(this); //let the player know they are in a new room
     }
 
     public Player getPlayer()
