@@ -25,6 +25,7 @@ public class playerScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("enemy"))
         {
+            Destroy(CORE.getRoom());
             count++;
             if(count == 3)
             {

@@ -12,6 +12,11 @@ public class CORE : MonoBehaviour
     private static Player currentPlayer = null;
     private static Enemy currentEnemy = null;
 
+    public static GameObject getRoom()
+    {
+        return CORE.theRoomsGos[0];
+    }
+
     public static void setEnemy(Enemy e)
     {
         CORE.currentEnemy = e;
