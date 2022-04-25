@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+
+
 public class boxScript : MonoBehaviour
 {
     private int count;
@@ -11,6 +13,7 @@ public class boxScript : MonoBehaviour
     private Rigidbody rb;
     public float speed = 20f;
     private NavMeshAgent agent; 
+    private Enemy theEnemy;
 
     // Start is called before the first frame update
     void Start() //like a constructor
@@ -20,6 +23,8 @@ public class boxScript : MonoBehaviour
         agent = this.gameObject.GetComponent<NavMeshAgent>();
         //agent.speed = 20f;
         //agent.Warp(thePlayer.transform.position);
+  	theEnemy = new Enemy();
+	CORE.setEnemy(theEnemy);
     }
 
     void OnCollisionEnter(Collision collision)
