@@ -5,11 +5,17 @@ using UnityEngine;
 public class roomTriggerScript : MonoBehaviour
 {
     private Room thisRoom;
-   
+
 
     // Start is called before the first frame update
+    void Awake()
+    {
+        print("*************** Room trigger is awake *************");
+    }
+
     void Start()
     {
+        print("*************** Room trigger has started *************");
         this.thisRoom = new Room();
         CORE.addRoom(this.thisRoom);
     }
@@ -23,6 +29,7 @@ public class roomTriggerScript : MonoBehaviour
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {
+            this.thisRoom.setEnemy(CORE.getEnemy());
             print("Enemy Entered room " + this.gameObject.ToString());
         }
     }

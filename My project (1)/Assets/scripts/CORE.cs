@@ -10,6 +10,17 @@ public class CORE : MonoBehaviour
     private static List<GameObject> theRoomsGos = new List<GameObject>();
     private static List<Room> theRooms = new List<Room>();
     private static Player currentPlayer = null;
+    private static Enemy currentEnemy = null;
+
+    public static void setEnemy(Enemy e)
+    {
+        CORE.currentEnemy = e;
+    }
+
+    public static Enemy getEnemy()
+    {
+        return CORE.currentEnemy;
+    }
 
     public static void setPlayer(Player p)
     {
