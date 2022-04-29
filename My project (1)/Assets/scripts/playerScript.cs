@@ -10,7 +10,7 @@ public class playerScript : MonoBehaviour
     private int count = 0;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         CORE.setPlayer(thePlayer);
         rb = this.gameObject.GetComponent<Rigidbody>();
@@ -25,7 +25,6 @@ public class playerScript : MonoBehaviour
     {
         if(collision.gameObject.tag.Equals("enemy"))
         {
-            Destroy(CORE.getRoom());
             count++;
             if(count == 3)
             {

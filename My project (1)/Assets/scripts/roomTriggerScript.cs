@@ -5,32 +5,34 @@ using UnityEngine;
 public class roomTriggerScript : MonoBehaviour
 {
     private Room thisRoom;
-
+    public GameObject roomGO;
 
     // Start is called before the first frame update
+    
     void Awake()
     {
-        print("*************** Room trigger is awake *************");
+        //print("*************** Room trigger has started *************");
+        CORE.addRoomTriggerGO(this.gameObject);
+        this.thisRoom = new Room(this.gameObject);
+        CORE.addRoom(this.thisRoom);
     }
 
-    void Start()
+    private void OnTriggerExit(Collider other)
     {
-        print("*************** Room trigger has started *************");
-        this.thisRoom = new Room();
-        CORE.addRoom(this.thisRoom);
+        Destroy(this.roomGO);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag.Equals("Player"))
+        if (other.gameObject.tag.Equals("Player"))
         {
             this.thisRoom.setPlayer(CORE.getPlayer()); //lets the new room know about the player
-            print("Player now in room: " + this.thisRoom);
+            //print("Player now in room: " + this.thisRoom);
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {
             this.thisRoom.setEnemy(CORE.getEnemy());
-            print("Enemy Entered room " + this.gameObject.ToString());
+            //print("Enemy Entered room " + this.gameObject.ToString());
         }
     }
 
